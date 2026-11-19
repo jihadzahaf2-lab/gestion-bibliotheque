@@ -18,12 +18,14 @@ def main():
     biblio.ajouter(
         Livre("978-2-07-036002-4", "L'Étranger", "Albert Camus")
     )
+
     biblio.ajouter(
         Livre("978-2-07-036822-8", "La Peste", "Albert Camus")
     )
 
     print("=== Bibliothèque ===")
     print(f"{len(biblio)} livres au catalogue")
+
     for livre in biblio.livres:
         print(f" - {livre}")
 
@@ -35,15 +37,14 @@ def main():
     for livre in biblio.rechercher_par_auteur("Albert Camus"):
         print(f" - {livre}")
 
-   # Recherche par titre
-print("Recherche « peste » :")
-for livre in biblio.rechercher_par_titre("peste"):
-    print(f" - {livre}")
+    print("Recherche « peste » :")
+    for livre in biblio.rechercher_par_titre("peste"):
+        print(f" - {livre}")
 
-# Export JSON
-exporter_json(biblio, "livres.json")
-print("Export JSON terminé !")
+    exporter_json(biblio, "livres.json")
+    print("Export JSON terminé !")
+
 
 if __name__ == "__main__":
-    
     main()
+
